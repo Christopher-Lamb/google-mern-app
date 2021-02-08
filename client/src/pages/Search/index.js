@@ -3,7 +3,7 @@ import "./style.css";
 import Navbar from "../../components/Navbar";
 import Jumbotron from "../../components/Jumbotron";
 import { Row, Col, Container } from "react-bootstrap";
-import SearchForm from "../../components/SearchForm"
+import SearchForm from "../../components/SearchForm";
 
 function Search() {
   return (
@@ -12,7 +12,7 @@ function Search() {
       <Container>
         <Row>
           <Col md={{ offset: 1, span: 10 }}>
-            <Jumbotron id={`header-sign`}>
+            <Jumbotron id={`header-sign`} className={`shadow p-3 mb-5 rounded`}>
               <div>
                 <Row>
                   <h1>(React) Google Books Search</h1>
@@ -26,20 +26,17 @@ function Search() {
         </Row>
         <Row>
           <Col md={{ offset: 1, span: 10 }}>
-            <Jumbotron>
-             <h2>Search</h2>
-             <SearchForm></SearchForm>
+            <Jumbotron className={`shadow p-3 mb-5 rounded`}>
+              <h2>Search</h2>
+              <SearchForm></SearchForm>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col md={{ offset: 1, span: 10 }}>
-            <Jumbotron></Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={{ offset: 1, span: 10 }}>
-            <Jumbotron></Jumbotron>
+            <Jumbotron className={`shadow p-3 mb-5 rounded`}>
+              <h3>Results</h3>
+            </Jumbotron>
           </Col>
         </Row>
       </Container>
