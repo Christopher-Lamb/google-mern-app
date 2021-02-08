@@ -1,0 +1,10 @@
+#header-sign {
+  height: 200px;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.header-text {
+  text-align: center;
+}
