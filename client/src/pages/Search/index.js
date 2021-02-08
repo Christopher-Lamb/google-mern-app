@@ -3,6 +3,7 @@ import "./style.css";
 import Navbar from "../../components/Navbar";
 import Jumbotron from "../../components/Jumbotron";
 import { Row, Col, Container } from "react-bootstrap";
+import SearchForm from "../../components/SearchForm"
 
 function Search() {
   return (
@@ -25,7 +26,10 @@ function Search() {
         </Row>
         <Row>
           <Col md={{ offset: 1, span: 10 }}>
-            <Jumbotron></Jumbotron>
+            <Jumbotron>
+             <h2>Search</h2>
+             <SearchForm></SearchForm>
+            </Jumbotron>
           </Col>
         </Row>
         <Row>
