@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-function SearchForm() {
-  const [searchState, setSearchState] = useState({
-    search: "",
-  });
+function SearchForm(props) {
   const [inputState, setInputState] = useState({
     input: "",
   });
+
+  //Handle Btn Click
 
   const handleInputChange = (event) => {
     const { value } = event.target;
@@ -19,7 +18,7 @@ function SearchForm() {
       <button
         onClick={(event) => {
           event.preventDefault();
-          setSearchState({ ...searchState, search: inputState });
+          props.onSearch(inputState.input);
         }}
         type="submit"
       >
@@ -28,5 +27,4 @@ function SearchForm() {
     </form>
   );
 }
-
 export default SearchForm;

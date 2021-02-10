@@ -8,3 +8,16 @@
 .header-text {
   text-align: center;
 }
+
+.jumbotron-book {
+  overflow: hidden;
+  height: 350px;
+  padding-top: 0;
+  position: relative;
+}
+
+.btn-Delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
