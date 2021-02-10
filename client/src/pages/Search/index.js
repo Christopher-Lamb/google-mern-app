@@ -26,7 +26,20 @@ const Search = () => {
     }
   };
 
-  
+  const onView = (event) => {
+    const target = event.target;
+    target.parentElement.parentElement.parentElement.classList.remove(
+      "jumbotron-book"
+    );
+    target.parentElement.parentElement.parentElement.classList.add(
+      "jumbotron-book-open"
+    );
+  };
+  const onSave = (event) => {
+    const target = event.target;
+
+    console.log(target.id);
+  };
 
   return (
     <div>
@@ -68,8 +81,12 @@ const Search = () => {
                           </Col>
 
                           <Col xl={2}>
-                            <Button btnType={"View"}></Button>
-                            <Button btnType={"Save"}></Button>
+                            <Button btnType={"View"} onClick={onView}></Button>
+                            <Button
+                              id={book.id}
+                              btnType={"Save"}
+                              onClick={onSave}
+                            ></Button>
                           </Col>
                         </Row>
                         <Row>
@@ -79,6 +96,7 @@ const Search = () => {
                           <Col md={4} lg={2}>
                             <img
                               src={`${book.volumeInfo.imageLinks.thumbnail}`}
+                              alt={"Image of book"}
                             ></img>
                           </Col>
                           <Col md={8} lg={10}>

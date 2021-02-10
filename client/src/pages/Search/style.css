@@ -15,6 +15,11 @@
   padding-top: 0;
   position: relative;
 }
+.jumbotron-book-opened {
+  height: 100%;
+  padding-top: 0;
+  position: relative;
+}
 
 .btn-Delete {
   position: absolute;
