@@ -11,11 +11,11 @@ function Navbar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="true"
-          aria-label="Toggle navigation"
+          dataBsToggle="collapse"
+          dataBsTarget="#navbarSupportedContent"
+          ariaControls="navbarSupportedContent"
+          ariaExpanded="true"
+          ariaLabel="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
