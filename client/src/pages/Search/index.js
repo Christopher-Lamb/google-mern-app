@@ -20,7 +20,7 @@ const Search = () => {
       let array = await books.data.items;
       await setBooksState({ ...booksState, books: array });
       await console.log("%cReturns The array", "color:limegreen");
-      console.log(booksState.books);
+      console.log(booksState);
     } catch (err) {
       console.log(err);
     }
@@ -35,8 +35,27 @@ const Search = () => {
       "jumbotron-book-open"
     );
   };
+
   const onSave = (event) => {
     const target = event.target;
+    try {
+      const book = booksState.books.find((book) => book.id === target.id);
+      console.log(book);
+      API.saveBook({
+        googleId: book.id,
+        title: book.volumeInfo.title,
+        link: book.volumeInfo.infoLink,
+        authors: book.volumeInfo.authors,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks.thumbnail,
+      })
+        .then(() => console.log("Finsihed"))
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (err) {
+      console.log(err);
+    }
 
     console.log(target.id);
   };
@@ -96,7 +115,7 @@ const Search = () => {
                           <Col md={4} lg={2}>
                             <img
                               src={`${book.volumeInfo.imageLinks.thumbnail}`}
-                              alt={"Image of book"}
+                              alt={"book"}
                             ></img>
                           </Col>
                           <Col md={8} lg={10}>
