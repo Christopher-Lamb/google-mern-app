@@ -4,6 +4,7 @@ import Jumbotron from "../../components/Jumbotron";
 import { Row, Col, Container } from "react-bootstrap";
 import Button from "../../components/Button";
 import API from "../../utils/api";
+import "./style.css";
 
 function Saved() {
   const [books, setBooks] = useState([]);
@@ -26,6 +27,15 @@ function Saved() {
     API.deleteBook(id).then((res) => {
       SavedBooks();
     });
+  };
+  const onView = (event) => {
+    const target = event.target;
+    target.parentElement.parentElement.parentElement.classList.remove(
+      "jumbotron-book"
+    );
+    target.parentElement.parentElement.parentElement.classList.add(
+      "jumbotron-book-open"
+    );
   };
   return (
     <>
@@ -64,15 +74,18 @@ function Saved() {
                             btnType={"Delete"}
                             onClick={onDelete}
                           ></Button>
-                          {/* <Button
-                            id={book.id}
-                            btnType={"View"}
-                            onClick={onView}
-                          ></Button> */}
+                          <Button btnType={"View"} onClick={onView}></Button>
                         </Col>
                       </Row>
                       <Row>
                         <h4>{book.authors}</h4>
+                      </Row>
+                      <Row>
+                        <h6>
+                          <a href={book.link}>
+                            <p className="book-link">More Info</p>
+                          </a>
+                        </h6>
                       </Row>
                       <Row>
                         <Col md={4} lg={2}>

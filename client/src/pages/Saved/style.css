@@ -14,7 +14,6 @@
   height: 350px;
   padding-top: 0;
   position: relative;
-  color:black
 }
 .jumbotron-book-opened {
   height: 100%;
@@ -22,7 +21,7 @@
   position: relative;
 }
 
-.btn-Save {
+.btn-Delete {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -30,7 +29,7 @@
 .btn-View {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 70px;
 }
 .book-link {
   color: black;

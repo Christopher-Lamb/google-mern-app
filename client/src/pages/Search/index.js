@@ -14,12 +14,11 @@ const Search = () => {
   //Btn Press From Search Form
   const handleSubmit = async (input) => {
     try {
-      await console.log("%cAPI Call", "color:limegreen");
       const books = await API.getBooks(input);
 
       let array = await books.data.items;
       await setBooksState({ ...booksState, books: array });
-      await console.log("%cReturns The array", "color:limegreen");
+
       console.log(booksState);
     } catch (err) {
       console.log(err);
@@ -112,13 +111,20 @@ const Search = () => {
                           <h4>{book.volumeInfo.authors}</h4>
                         </Row>
                         <Row>
+                          <h6>
+                            <a href={book.volumeInfo.infoLink}>
+                              <p className="book-link" >More Info</p>
+                            </a>
+                          </h6>
+                        </Row>
+                        <Row>
                           <Col md={4} lg={2}>
                             <img
                               src={`${book.volumeInfo.imageLinks.thumbnail}`}
                               alt={"book"}
                             ></img>
                           </Col>
-                          <Col md={8} lg={10}>
+                          <Col md={7} lg={10}>
                             <p>{book.volumeInfo.description}</p>
                           </Col>
                         </Row>
